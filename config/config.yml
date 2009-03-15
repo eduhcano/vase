@@ -1,0 +1,5 @@
+development:
+  app_url: "http://localhost:3000"
+
+production:
+  app_url: "http://www.mydomain.com"

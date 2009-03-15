@@ -1,0 +1,42 @@
+<% form_for(@p, :url => profile_path(@p), :html => {:multipart => true, :id => 'profile'}) do |f| %>
+	<%= f.error_messages %>
+	<p>
+		<%= f.label :first_name, t("views.profile.first_name") %><br />
+		<%= f.text_field :first_name %>
+	</p>
+	<p>
+		<%= f.label :last_name, t("views.profile.last_name") %><br />
+		<%= f.text_field :last_name %>
+	</p>
+	<p>
+		<%= f.label :address, t("views.profile.address") %><br />
+		<%= f.text_field :address %>
+	</p>
+	<p>
+		<%= f.label :city, t("views.profile.city") %><br />
+		<%= f.text_field :city %>
+	</p>
+	<p>
+		<%= f.label :zip, t("views.profile.zip") %><br />
+		<%= f.text_field :zip, :size => 10 %>
+	</p>
+	<p>
+		<%= f.label :state, t("views.profile.state") %><br />
+		<%= f.text_field :state %>
+	</p>
+	<p>
+		<%= f.label :location, t("views.profile.country") %><br />
+		<%= f.localized_country_select(:country, [], :include_blank => t("views.common.select_one")) %>
+	</p>
+	<p>
+		<%= f.label :time_zone, t("views.profile.time_zone") %><br />
+		<%= f.time_zone_select :time_zone %>
+	</p>
+	<p>
+		<%= f.label :language, t("views.profile.language") %><br />
+		<%= f.select :language, { :es => 'es', :en => 'en'} %>
+	</p>	
+	<p>
+		<%= submit_tag t("views.common.save_changes"), :or => (link_to "Cancel", root_path) %>
+	</p>
+<% end %>

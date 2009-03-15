@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>base</title>
+  <%= stylesheet_link_tag 'style' %>
+	<%= javascript_include_tag :all %>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<div class="username"><%= render :partial => "user_sessions/login" %></div>
+	</div>
+	<div id="content">
+		<div id="flash">
+			<%- flash.each do |name, msg| -%>
+				<%= content_tag :div, msg, :id => "flash_#{name}" %>
+			<%- end -%>
+		</div>
+		<%= yield %>
+	</div>	
+	<div id="footer"></div>	
+</div>
+</body>
+</html>
