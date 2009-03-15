@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   
   def set_profile
     @p = current_user.profile if current_user && current_user.profile
+    I18n.locale = @p.language if @p && @p.language
     Time.zone = @p.time_zone if @p && @p.time_zone
   end
 

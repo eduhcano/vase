@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "Account registered!"
-      redirect_back_or_default edit_profile_path
+      redirect_back_or_default edit_profile_path(@user.profile)
     else
       render :action => :new
     end
