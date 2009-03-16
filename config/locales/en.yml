@@ -4,8 +4,10 @@
 en:
   views:
     common:
+      are_you_sure: Are you sure?
       save_changes: Save changes
       or: or  
+      select_one: Select one
     user_sessions:
       welcome: Welcome
       log_in: Login

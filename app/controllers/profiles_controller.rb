@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   # filters
-  before_filter :require_user
+  before_filter :require_user, :except => :show
   
   def show
     @profile = Profile.find(params[:id])

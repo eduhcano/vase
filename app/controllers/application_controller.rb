@@ -5,8 +5,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :set_profile
   filter_parameter_logging :password, :password_confirmation
 
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
   before_filter :set_profile
   
   def set_profile

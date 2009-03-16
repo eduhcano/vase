@@ -7,7 +7,7 @@
 		<% else %>
 		  <li><%= t("views.user_sessions.welcome") %> <%= link_to current_user.login, edit_profile_path(@p) %></li>
 		  <li><span class="separator">|</span></li>
-		  <li><%= link_to t("views.user_sessions.logout"), user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %></li>
+		  <li><%= link_to t("views.user_sessions.logout"), user_session_path, :method => :delete, :confirm => t("views.common.are_you_sure") %></li>
 		<% end %>		
 	</ul>
 </div>

@@ -129,8 +129,10 @@ es:
         
   views:
       common:
+        are_you_sure: ¿Estás completamente seguro?
         save_changes: Guardar cambios
         or: ó
+        select_one: Selecciona uno
       user_sessions:
         welcome: Bienvenido
         log_in: Validarse
