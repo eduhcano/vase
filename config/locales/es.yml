@@ -130,7 +130,6 @@ es:
   views:
       common:
         save_changes: Guardar cambios
-        select_one: Selecciona uno
         or: ó
       user_sessions:
         welcome: Bienvenido
@@ -147,7 +146,7 @@ es:
         login_using_standard_account: valídate usando nombre de usuario/contraseña
         openid_identifier: Identificador OpenID
       users:
-        openid_identifier: Or use OpenID instead of a standard login / password
+        openid_identifier: O usar OpenID en vez de nombre de usuario / contraseña
         email: Email
         login: Nombre de usuario
         password: Contraseña
