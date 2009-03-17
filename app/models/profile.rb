@@ -8,6 +8,10 @@ class Profile < ActiveRecord::Base
     :path => ":rails_root/public/avatars/:id/:style/:basename.:extension",
     :default_url => "/images/avatars/:style/missing.png"
     
+  def website=(address)
+    write_attribute(:website, fix_http(address))
+  end
+    
   def full_name
     [first_name, last_name].delete_if(&:blank?).join(" ")
   end
@@ -26,5 +30,12 @@ class Profile < ActiveRecord::Base
   
   def city_state_zip
     [city_state, zip].delete_if(&:blank?).join(' ')
+  end
+  
+  protected
+  
+  def fix_http str
+    return '' if str.blank?
+    str.starts_with?('http') ? str : "http://#{str}"
   end
 end

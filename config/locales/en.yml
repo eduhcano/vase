@@ -10,6 +10,7 @@ en:
       select_one: Select one
       cancel: Cancel
       back: Back
+      home: Home
     user_sessions:
       welcome: Welcome
       log_in: Login
@@ -53,3 +54,5 @@ en:
       language: Language
       avatar: Avatar
       change_my_password: Change your password
+      website: Website
+      company: Company

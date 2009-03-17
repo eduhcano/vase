@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20090317200340) do
     t.string   "zip"
     t.string   "state"
     t.string   "country"
+    t.string   "website"
+    t.string   "company"
     t.string   "time_zone",           :default => "UTC"
     t.string   "language",            :default => "es"
     t.datetime "created_at"

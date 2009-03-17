@@ -135,6 +135,7 @@ es:
         select_one: Selecciona uno
         cancel: Cancelar
         back: Volver
+        home: Inicio
       user_sessions:
         welcome: Bienvenido
         log_in: Validarse
@@ -178,6 +179,8 @@ es:
         language: Idioma
         avatar : Avatar
         change_my_password: Cambiar mi contraseña
+        website: Página Web
+        company: Compañía
           
   date:
     formats:

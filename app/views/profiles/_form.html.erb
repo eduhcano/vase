@@ -29,6 +29,14 @@
 		<%= f.localized_country_select(:country, [], :include_blank => t("views.common.select_one")) %>
 	</p>
 	<p>
+		<%= f.label :website, t("views.profiles.website") %><br />
+		<%= f.text_field :website %>
+	</p>
+	<p>
+		<%= f.label :company, t("views.profiles.company") %><br />
+		<%= f.text_field :company %>
+	</p>
+	<p>
 		<%= f.label :time_zone, t("views.profiles.time_zone") %><br />
 		<%= f.time_zone_select :time_zone %>
 	</p>
