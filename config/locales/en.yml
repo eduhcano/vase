@@ -8,6 +8,7 @@ en:
       save_changes: Save changes
       or: or  
       select_one: Select one
+      cancel: Cancel
     user_sessions:
       welcome: Welcome
       log_in: Login
@@ -22,6 +23,13 @@ en:
       remember_my_password: Remember my password
       login_using_standard_account: login using a standard username / password
       openid_identifier: OpenID
+    password_resets:
+      reset_password: Reset my password
+      email: Email
+      forgot_password: Forgot Password
+      forgot_password_paragraph: Fill out the form below and instructions to reset your password will be emailed to you.
+      change_my_password: Change My Password
+      update_password_and_login: Update my password and log me in 
     users:
       openid_identifier: Or use OpenID instead of a standard login / password
       email: Email

@@ -133,6 +133,7 @@ es:
         save_changes: Guardar cambios
         or: ó
         select_one: Selecciona uno
+        cancel: Cancelar
       user_sessions:
         welcome: Bienvenido
         log_in: Validarse
@@ -147,6 +148,13 @@ es:
         remember_my_password: recordar mi contraseña
         login_using_standard_account: valídate usando nombre de usuario/contraseña
         openid_identifier: Identificador OpenID
+      password_resets:
+        reset_password: Reset my password
+        email: Email
+        forgot_password: Forgot Password
+        forgot_password_paragraph: Fill out the form below and instructions to reset your password will be emailed to you
+        change_my_password: Cambiar mi contraseña
+        update_password_and_login: Cambiar contraseña y validar
       users:
         openid_identifier: O usar OpenID en vez de nombre de usuario / contraseña
         email: Email

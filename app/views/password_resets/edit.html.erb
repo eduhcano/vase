@@ -1,12 +1,12 @@
-<h1>Change My Password</h1>
+<h1><%= t("views.password_resets.change_my_password") %></h1>
  
 <% form_for @user, :url => password_reset_path, :method => :put do |f| %>
   <%= f.error_messages %>
-  <%= f.label :password %><br />
+  <%= f.label :password, t("views.users.change_my_password") %><br />
   <%= f.password_field :password %><br />
   <br />
-  <%= f.label :password_confirmation %><br />
+  <%= f.label :password_confirmation, t("views.users.change_my_password") %><br />
   <%= f.password_field :password_confirmation %><br />
   <br />
-  <%= f.submit "Update my password and log me in" %>
+  <%= submit_tag t("views.password_resets.update_password_and_login"), :or => (link_to t("views.common.cancel"), root_path) %>
 <% end %>

@@ -37,6 +37,6 @@
 		<%= f.select :language, { :es => 'es', :en => 'en'} %>
 	</p>	
 	<p>
-		<%= submit_tag t("views.common.save_changes"), :or => (link_to "Cancel", root_path) %>
+		<%= submit_tag t("views.common.save_changes"), :or => (link_to t("views.common.cancel"), root_path) %>
 	</p>
 <% end %>
