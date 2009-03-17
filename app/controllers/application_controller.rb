@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
   helper :all
   protect_from_forgery
-  
+
   helper_method :current_user_session, :current_user, :set_profile
   filter_parameter_logging :password, :password_confirmation
 
   before_filter :set_profile
-  
+
   def set_profile
     @p = current_user.profile if current_user && current_user.profile
     I18n.locale = @p && @p.language ? @p.language : "en"
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  
+
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
     @current_user_session = UserSession.find
