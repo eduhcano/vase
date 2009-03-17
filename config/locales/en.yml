@@ -9,6 +9,7 @@ en:
       or: or  
       select_one: Select one
       cancel: Cancel
+      back: Back
     user_sessions:
       welcome: Welcome
       log_in: Login
@@ -37,7 +38,8 @@ en:
       password: Password
       change_password: Change password
       password_confirmation: Confirm password
-    profile:
+    profiles:
+      your_account_settings: Your account settings
       first_name: First name
       last_name: Last name
       address: Address
@@ -47,3 +49,5 @@ en:
       country: Country
       time_zone: Time Zone
       language: Language
+      avatar : Avatar
+      change_password: Change your password

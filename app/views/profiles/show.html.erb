@@ -1,5 +1,6 @@
 <div id="profile">
 	<h1><%=h @profile.user.login %></h1>
-	
-	<p><%= link_to "Back", root_path %></p>
+	<p><%= @profile.brief_location %></p>
+	<%= image_tag(@profile.avatar.url(:medium)) %>
+	<p><%= link_to t("views.common.back"), root_path %></p>
 </div>

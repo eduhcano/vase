@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090315202312) do
+ActiveRecord::Schema.define(:version => 20090317200340) do
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
@@ -35,10 +35,14 @@ ActiveRecord::Schema.define(:version => 20090315202312) do
     t.string   "zip"
     t.string   "state"
     t.string   "country"
-    t.string   "time_zone",  :default => "UTC"
-    t.string   "language",   :default => "es"
+    t.string   "time_zone",           :default => "UTC"
+    t.string   "language",            :default => "es"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "users", :force => true do |t|

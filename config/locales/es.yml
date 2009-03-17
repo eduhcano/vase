@@ -134,6 +134,7 @@ es:
         or: ó
         select_one: Selecciona uno
         cancel: Cancelar
+        back: Volver
       user_sessions:
         welcome: Bienvenido
         log_in: Validarse
@@ -162,16 +163,19 @@ es:
         password: Contraseña
         change_password: Cambiar contraseña
         password_confirmation: Confirma contraseña    
-      profile:
-          first_name: Nombre
-          last_name: Apellidos
-          address: Dirección
-          city: Ciudad
-          zip: Código Postal
-          state: Provincia
-          country: Pais
-          time_zone: Zona Horaria
-          language: Idioma
+      profiles:
+        your_account_settings: Detalles de tu cuenta
+        first_name: Nombre
+        last_name: Apellidos
+        address: Dirección
+        city: Ciudad
+        zip: Código Postal
+        state: Provincia
+        country: Pais
+        time_zone: Zona Horaria
+        language: Idioma
+        avatar : Avatar
+        change_password: Cambiar mi contraseña
           
   date:
     formats:

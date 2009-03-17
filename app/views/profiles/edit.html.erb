@@ -1,7 +1,5 @@
-<h1>Your account Settings</h1>
-
+<h1><%= t("views.profiles.your_account_settings") %></h1>
 
 <%= render :partial => "form" %>
 
-
-<%= link_to "Change your password", edit_account_path %>
+<%= link_to t("views.profiles.change_my_password"), edit_account_path %>
