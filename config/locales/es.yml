@@ -157,12 +157,14 @@ es:
         change_my_password: Cambiar mi contraseña
         update_password_and_login: Cambiar contraseña y validar
       users:
+        listing_users: Lista de usuarios
         openid_identifier: O usar OpenID en vez de nombre de usuario / contraseña
         email: Email
         login: Nombre de usuario
         password: Contraseña
         change_password: Cambiar contraseña
         password_confirmation: Confirma contraseña    
+        edit_my_account: Editar mi cuenta
       profiles:
         your_account_settings: Detalles de tu cuenta
         first_name: Nombre
@@ -175,7 +177,7 @@ es:
         time_zone: Zona Horaria
         language: Idioma
         avatar : Avatar
-        change_password: Cambiar mi contraseña
+        change_my_password: Cambiar mi contraseña
           
   date:
     formats:

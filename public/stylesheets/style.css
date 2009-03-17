@@ -132,3 +132,30 @@ html>body #container {
   font-size: 12px;
   list-style: disc;
 }
+
+#users {
+	height: 50px;
+}
+
+#users ul, li {
+	list-style-type: none;
+}
+
+#users ul {
+	margin: 0;
+	padding: 0;
+}
+
+#users li {
+	float: left;
+	margin-right: 10px;
+}
+
+#users li img {
+	border: 1px solid #ccc;
+	padding: 1px;
+}
+
+#users li img:hover {
+	border: 1px solid #bbb;
+}

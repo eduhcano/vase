@@ -32,12 +32,14 @@ en:
       change_my_password: Change My Password
       update_password_and_login: Update my password and log me in 
     users:
+      listing_users: Listing users
       openid_identifier: Or use OpenID instead of a standard login / password
       email: Email
       login: Username
       password: Password
       change_password: Change password
       password_confirmation: Confirm password
+      edit_my_account: Edit My Account
     profiles:
       your_account_settings: Your account settings
       first_name: First name
@@ -49,5 +51,5 @@ en:
       country: Country
       time_zone: Time Zone
       language: Language
-      avatar : Avatar
-      change_password: Change your password
+      avatar: Avatar
+      change_my_password: Change your password
