@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  default_url_options[:host] = APP_CONFIG["app_url"]
+  default_url_options[:host] = APP_CONFIG["app_domain"]
 
   def password_reset_instructions(user)
     subject       "Password Reset Instructions"
