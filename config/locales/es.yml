@@ -135,10 +135,10 @@ es:
         select_one: Selecciona uno
         cancel: Cancelar
         back: Volver
-        home: Inicio
+        home: inicio
       user_sessions:
-        log_in: Validarse
-        register: Nueva cuenta
+        log_in: validarse
+        register: nueva cuenta
         settings: Cuenta
         logout: salir 
         login: Nombre de usuario
@@ -180,6 +180,8 @@ es:
         change_my_password: Cambiar mi contraseña
         website: Página Web
         company: Compañía
+      friends:
+        log_in_to_follow: Valídate para seguir
           
   date:
     formats:

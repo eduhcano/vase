@@ -187,3 +187,13 @@ html>body #left {
 html>body #right {
 	width: 200px; 
 }
+
+span.vcard a img {
+	margin: 0 2px 2px 0;
+	border: 1px solid #ccc;
+	padding: 1px;
+}
+
+span.vcard a img:hover {
+	border: 1px solid #bbb;
+}

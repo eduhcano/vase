@@ -1,29 +1,30 @@
 class FriendsController < ApplicationController
   # filters
-  before_filter :require_user, :setup
+  before_filter :require_user
   
   def create
-    @conn = Friend.do_friends(@inviter, @invited)
-    
-    if @conn
-      flash.now[:notice] = "is now your friend"
-    else
-      flash.now[:error] = "Sorry, something goes wrong"
-    end
+    @invited = Profile.find(params[:profile_id])
+    @conn = Friend.do_friends(@p, @invited)
     
     respond_to do |format|
-      format.html
-      format.xml  { render :xml => @conn }
+      if @conn
+        flash[:notice] = "#{@invited.user.login} is now your friend"
+        format.html { redirect_to(@invited) }
+        format.xml  { render :xml => @conn, :status => :created }
+      else
+        format.html { redirect_to(@invited) }
+        format.xml  { render :xml => @conn.errors, :status => :unprocessable_entity }
+      end
     end
   end
 
   def destroy
-  end
-  
-  protected
-  
-  def setup
-    @inviter = @p.user
-    @invited = Profile.find(params[:profile_id]).user
+    @invited = Profile.find(params[:id])
+    @conn = Friend.break(@p, @invited)
+
+    respond_to do |format|
+      format.html { redirect_to(@invited) }
+      format.xml  { head :ok }
+    end
   end
 end
