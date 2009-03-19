@@ -137,11 +137,10 @@ es:
         back: Volver
         home: Inicio
       user_sessions:
-        welcome: Bienvenido
         log_in: Validarse
         register: Nueva cuenta
         settings: Cuenta
-        logout: Cerrar sesión
+        logout: salir 
         login: Nombre de usuario
         use_open_id: valídate usando OpenID
         password: Contraseña

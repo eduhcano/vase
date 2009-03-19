@@ -26,6 +26,7 @@ a img {
 
 h1 {
 	font-size: 22px;
+	margin-top: 10px;
 }
 
 h2, h2 a {
@@ -41,14 +42,11 @@ label.required {
 	font-weight: bold;
 }
 
-#container {
+#container {	
 	background-color: #fff;	
 	width: 680px; 
 	padding: 20px 40px 40px 40px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	margin-right: auto;
-	margin-left: auto; 	
+	margin: 20px auto;
 	border: 1px solid #ccc;
 	text-align:left; 
 	width: 680px;
@@ -59,6 +57,11 @@ label.required {
 
 html>body #container {
 	width: 650px;
+	min-height: 400px;
+}
+
+#header {
+	text-align: right;
 }
 
 #navigation ul {
@@ -158,4 +161,29 @@ html>body #container {
 
 #users li img:hover {
 	border: 1px solid #bbb;
+}
+
+#left {
+	float: left;
+	margin-right: 20px;
+	width: 450px; 
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 420px;
+}
+
+html>body #left {
+	width: 420px; 
+}
+	
+#right {
+	float: left;
+	width: 230px; 
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 200px;
+}
+
+html>body #right {
+	width: 200px; 
 }

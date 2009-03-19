@@ -2,7 +2,7 @@
 module ApplicationHelper
   def submit_tag(value = "Save changes", options = {})
     or_option = options.delete(:or)
-    return super + "<span class='button_or'>" + " or " + or_option + "</span>" if or_option
+    return super + "<span class='button_or'> #{t("views.common.or")} #{or_option}</span>" if or_option
     super
   end
 end

@@ -12,7 +12,6 @@ en:
       back: Back
       home: Home
     user_sessions:
-      welcome: Welcome
       log_in: Login
       register: New account
       settings: Settings

@@ -1,6 +1,13 @@
 <div id="profile">
-	<h1><%=h @profile.user.login %></h1>
-	<p><%= @profile.brief_location %></p>
-	<%= image_tag(@profile.avatar.url(:medium)) %>
-	<p><%= link_to t("views.common.back"), root_path %></p>
+	<div id="left">
+		<h1><%=h @profile.user.login %></h1>
+		<p><%= @profile.brief_location %></p>
+		<%= image_tag(@profile.avatar.url(:medium)) %>
+		<p><%= friend_link(@p, @profile) %></p>
+		<p><%= link_to t("views.common.back"), root_path %></p>
+	</div>
+	<div id="right">
+		<h2>Friends</h2>
+		<h2>Fans</h2>
+	</div>
 </div>

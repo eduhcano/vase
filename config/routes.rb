@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   # users
-  map.resources :profiles
+  map.resources :profiles, :has_many => :friends
   map.resource  :account, :controller => "users"
   map.resource  :user_session
   map.resources :password_resets
