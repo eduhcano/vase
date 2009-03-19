@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  inviter_id: 1
+  invited_id: 1
+  status: 1
+
+two:
+  inviter_id: 1
+  invited_id: 1
+  status: 1

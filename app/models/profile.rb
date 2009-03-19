@@ -3,7 +3,7 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   
   # avatar
-  has_attached_file :avatar, :styles => { :medium => "100x100>", :thumb => "50x50>", :micro => "25x25>" },
+  has_attached_file :avatar, :styles => { :medium => "100x100#", :thumb => "50x50#", :micro => "25x25#" },
     :url  => "/avatars/:id/:style/:basename.:extension",
     :path => ":rails_root/public/avatars/:id/:style/:basename.:extension",
     :default_url => "/images/avatars/:style/missing.png"

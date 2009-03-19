@@ -1,6 +1,12 @@
 class User < ActiveRecord::Base
   # relations
   has_one :profile, :dependent => :destroy
+  has_many :friendships, :class_name  => "Friend", :foreign_key => 'inviter_id', :conditions => "status = #{Friend::ACCEPTED}", :dependent => :destroy
+  has_many :follower_friends, :class_name => "Friend", :foreign_key => "invited_id", :conditions => "status = #{Friend::PENDING}", :dependent => :destroy
+  has_many :following_friends, :class_name => "Friend", :foreign_key => "inviter_id", :conditions => "status = #{Friend::PENDING}", :dependent => :destroy
+  has_many :friends,   :through => :friendships, :source => :invited
+  has_many :followers, :through => :follower_friends, :source => :inviter
+  has_many :followings, :through => :following_friends, :source => :invited
   
   # authlogic  
   acts_as_authentic :login_field_validation_options => {:if => :openid_identifier_blank?}, :password_field_validation_options => {:if => :openid_identifier_blank?}
