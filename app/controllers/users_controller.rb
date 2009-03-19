@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # filters
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => [:show, :edit, :update]
   
@@ -17,8 +18,9 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
+    
     if @user.save
-      flash[:notice] = "Account registered!"
+      flash[:notice] = "Account registered"
       redirect_back_or_default edit_profile_path(@user.profile)
     else
       render :action => :new
@@ -31,8 +33,9 @@ class UsersController < ApplicationController
   
   def update
     @user = @current_user
+    
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Account updated!"
+      flash[:notice] = "Account updated"
       redirect_to edit_account_path
     else
       render :action => :edit

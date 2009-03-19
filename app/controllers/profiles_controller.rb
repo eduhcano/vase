@@ -1,12 +1,12 @@
 class ProfilesController < ApplicationController
   # filters
+  before_filter :setup
   before_filter :require_user, :except => :show
   
   def show
     @profile = Profile.find(params[:id])
-    @followings = @profile.followings
-    @followers = @profile.followers
-    
+    @followings = @profile.followings.find(:all, :order => "random()")
+    @followers = @profile.followers.find(:all, :order => "random()")
     
     respond_to do |format|
       format.html # show.html.erb
@@ -15,15 +15,13 @@ class ProfilesController < ApplicationController
   end
   
   def edit
-    @profile = @p
+    render
   end
   
   def update
-    @profile = @p
-
     respond_to do |format|
       if @profile.update_attributes(params[:profile])
-        flash[:notice] = 'Your profile was successfully updated.'
+        flash[:notice] = 'Your profile was successfully updated'
         format.html { redirect_to edit_profile_path }
         format.xml  { head :ok }
       else
@@ -31,5 +29,11 @@ class ProfilesController < ApplicationController
         format.xml  { render :xml => @p.errors, :status => :unprocessable_entity }
       end
     end
+  end
+  
+  protected
+  
+  def setup
+    @profile = @p
   end
 end
