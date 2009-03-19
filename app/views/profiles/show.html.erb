@@ -7,7 +7,9 @@
 		<p><%= link_to t("views.common.back"), root_path %></p>
 	</div>
 	<div id="right">
-		<h2>Friends</h2>
-		<h2>Fans</h2>
+		<h2>followings</h2>
+			<%= render :partial => "friend", :collection => @followings %>
+		<h2>followers</h2>
+			<%= render :partial => "friend", :collection => @followers %>
 	</div>
 </div>
