@@ -5,8 +5,8 @@ class ProfilesController < ApplicationController
   
   def show
     @profile = Profile.find(params[:id])
-    @followings = @profile.followings.find(:all, :order => "random()")
-    @followers = @profile.followers.find(:all, :order => "random()")
+    @followings = @profile.followings
+    @followers = @profile.followers
     
     respond_to do |format|
       format.html # show.html.erb

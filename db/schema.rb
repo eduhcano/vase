@@ -9,7 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090319154039) do
+ActiveRecord::Schema.define(:version => 20090320193956) do
+
+  create_table "feed_items", :force => true do |t|
+    t.integer  "item_id"
+    t.string   "item_type"
+    t.datetime "created_at"
+  end
+
+  create_table "feeds", :force => true do |t|
+    t.integer  "profile_id"
+    t.integer  "feed_item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friends", :force => true do |t|
     t.integer  "inviter_id"

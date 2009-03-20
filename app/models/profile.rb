@@ -1,16 +1,24 @@
 class Profile < ActiveRecord::Base
+  # include
+  include FeedLogger
+  
   # ralations
   belongs_to :user
   has_many :followings_f, :class_name => "Friend", :foreign_key => "inviter_id", :dependent => :destroy
   has_many :followers_f, :class_name => "Friend", :foreign_key => "invited_id", :dependent => :destroy
   has_many :followings, :through => :followings_f, :source => :invited
   has_many :followers, :through => :followers_f, :source => :inviter
+  has_many :feeds
+  has_many :feed_items, :through => :feeds, :order => 'created_at desc'
   
   # avatar
   has_attached_file :avatar, :styles => { :medium => "100x100#", :thumb => "50x50#", :micro => "25x25#" },
     :url  => "/avatars/:id/:style/:basename.:extension",
     :path => ":rails_root/public/avatars/:id/:style/:basename.:extension",
     :default_url => "/images/avatars/:style/missing.png"
+    
+  # callbacks
+  after_update :create_feed
     
   def website=(address)
     write_attribute(:website, fix_http(address))
@@ -46,6 +54,10 @@ class Profile < ActiveRecord::Base
   end
   
   protected
+  
+  def create_feed
+    add_feed(:item => self, :profile => self)
+  end
   
   def fix_http str
     return '' if str.blank?

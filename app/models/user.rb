@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # relations
   has_one :profile, :dependent => :destroy
-  
+    
   # authlogic  
   acts_as_authentic :login_field_validation_options => {:if => :openid_identifier_blank?}, :password_field_validation_options => {:if => :openid_identifier_blank?}
   
