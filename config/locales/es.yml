@@ -176,12 +176,14 @@ es:
         country: Pais
         time_zone: Zona Horaria
         language: Idioma
-        avatar : Avatar
+        change_my_avatar : Cambiar mi avatar
         change_my_password: Cambiar mi contraseña
         website: Página Web
         company: Compañía
       friends:
         log_in_to_follow: Valídate para seguir
+      avatars:
+        edit_avatar: Editar avatar
           
   date:
     formats:

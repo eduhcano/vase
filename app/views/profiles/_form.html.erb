@@ -1,4 +1,4 @@
-<% form_for(@p, :url => profile_path(@p), :html => {:multipart => true, :id => 'profile'}) do |f| %>
+<% form_for(@p, :url => profile_path(@p), :html => {:id => 'profile'}) do |f| %>
 	<%= f.error_messages %>
 	<p>
 		<%= f.label :first_name, t("views.profiles.first_name") %><br />
@@ -43,10 +43,6 @@
 	<p>
 		<%= f.label :language, t("views.profiles.language") %><br />
 		<%= f.select :language, locales %>
-	</p>
-	<p>
-		<%= f.label :avatar, t("views.profiles.avatar") %><br />
-		<%= f.file_field :avatar %>
 	</p>	
 	<p>
 		<%= submit_tag t("views.common.save_changes"), :or => (link_to t("views.common.back"), root_path) %>

@@ -1,0 +1,12 @@
+<h1><%= t("views.avatars.edit_avatar") %></h1>
+
+<div class="avatar">
+	<div id="left">
+		<%= render :partial => "form" %>
+	</div>
+	
+	<div id="right">
+		<%= image_tag @p.avatar.image.url(:medium) %>
+	</div>
+</div>
+

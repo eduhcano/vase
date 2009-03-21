@@ -1,0 +1,10 @@
+<% form_for(@avatar, :url => profile_avatar_path(@p), :html => {:multipart => true, :id => 'avatar'}) do |f| %>
+	<%= f.error_messages %>
+	<p>
+		<%= f.label :image, t("views.profiles.image") %><br />
+		<%= f.file_field :image %>
+	</p>
+	<p>
+		<%= submit_tag t("views.common.save_changes"), :or => (link_to t("views.common.back"), root_path) %>
+	</p>
+<% end %>

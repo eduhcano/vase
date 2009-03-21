@@ -51,9 +51,11 @@ en:
       country: Country
       time_zone: Time Zone
       language: Language
-      avatar: Avatar
-      change_my_password: Change your password
+      change_my_avatar: Change my avatar
+      change_my_password: Change my password
       website: Website
       company: Company
     friends:
       log_in_to_follow: Login to Follow
+    avatars:
+      edit_avatar: Edit avatar

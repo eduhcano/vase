@@ -10,15 +10,14 @@ class Profile < ActiveRecord::Base
   has_many :followers, :through => :followers_f, :source => :inviter
   has_many :feeds
   has_many :feed_items, :through => :feeds, :order => 'created_at desc'
-  
-  # avatar
-  has_attached_file :avatar, :styles => { :medium => "100x100#", :thumb => "50x50#", :micro => "25x25#" },
-    :url  => "/avatars/:id/:style/:basename.:extension",
-    :path => ":rails_root/public/avatars/:id/:style/:basename.:extension",
-    :default_url => "/images/avatars/:style/missing.png"
-    
+  has_one  :avatar
+      
   # callbacks
   after_update :create_feed
+  
+  def after_create
+    build_avatar
+  end
   
   def website=(address)
     write_attribute(:website, fix_http(address))
@@ -56,7 +55,7 @@ class Profile < ActiveRecord::Base
   protected
   
   def create_feed
-    add_feed(:item => self, :profile => self) if avatar_file_name_changed?
+    #add_feed(:item => self, :profile => self) if avatar_file_name_changed?
   end
   
   def fix_http str
