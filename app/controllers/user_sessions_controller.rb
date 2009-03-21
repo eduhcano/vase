@@ -26,7 +26,7 @@ class UserSessionsController < ApplicationController
     respond_to do |format|
       format.html { 
         flash[:notice] = "Logout successful"
-        redirect_back_or_default new_user_session_url 
+        redirect_back_or_default login_path 
       }
       format.xml  { head :ok }
     end

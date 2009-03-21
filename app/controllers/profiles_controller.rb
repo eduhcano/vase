@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
   before_filter :require_user, :except => :show
   
   def show
-    @profile = Profile.find(params[:id])
+    @profile = User.find_by_login(params[:login]).profile
     @followings = @profile.followings
     @followers = @profile.followers
     
@@ -22,11 +22,11 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       if @profile.update_attributes(params[:profile])
         flash[:notice] = 'Your profile was successfully updated'
-        format.html { redirect_to edit_profile_path }
+        format.html { redirect_to settings_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @p.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @profile.errors, :status => :unprocessable_entity }
       end
     end
   end
