@@ -19,7 +19,7 @@ class Profile < ActiveRecord::Base
     
   # callbacks
   after_update :create_feed
-    
+  
   def website=(address)
     write_attribute(:website, fix_http(address))
   end
@@ -56,7 +56,7 @@ class Profile < ActiveRecord::Base
   protected
   
   def create_feed
-    add_feed(:item => self, :profile => self)
+    add_feed(:item => self, :profile => self) if avatar_file_name_changed?
   end
   
   def fix_http str
