@@ -2,7 +2,7 @@ module FriendsHelper
   def friend_link(inviter, invited)
     return link_to t("views.friends.log_in_to_follow"), login_path if inviter.blank?
     return '' if !(inviter && invited) or (inviter.id == invited.id)
-    return link_to 'Stop Being Friends', remove_path(invited.user.login), :method => :delete if invited.followed_by?(inviter)
+    return link_to 'Stop Being Friends', break_path(invited.user.login), :method => :delete if invited.followed_by?(inviter)
     link_to "Start Following", confirm_path(invited.user.login), :method => :post
   end
 end

@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20090321171607) do
     t.datetime "updated_at"
   end
 
+  add_index "feeds", ["feed_item_id"], :name => "fk_feed_items"
+
   create_table "friends", :force => true do |t|
     t.integer  "inviter_id"
     t.integer  "invited_id"

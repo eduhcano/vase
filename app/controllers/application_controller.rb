@@ -6,6 +6,11 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
 
   before_filter :set_profile
+  
+  # rescues
+  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+  rescue_from NoMethodError, :with => :render_404
+  rescue_from ActionView::TemplateError, :with => :render_404
 
   def set_profile
     @p = current_user.profile if current_user && current_user.profile
@@ -59,5 +64,9 @@ class ApplicationController < ActionController::Base
   def redirect_back_or_default(default)
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
+  end
+  
+  def render_404(exception)
+    render :template => 'errors/404'
   end
 end

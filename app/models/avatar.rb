@@ -4,6 +4,9 @@ class Avatar < ActiveRecord::Base
 
   # relation
   belongs_to :profile
+  
+  # callbacks
+  after_update :create_feed
 
   # avatar
   has_attached_file :image, :styles => { :medium => "100x100#", :thumb => "50x50#", :micro => "25x25#" },
@@ -14,6 +17,6 @@ class Avatar < ActiveRecord::Base
   protected
 
   def create_feed
-    add_feed(:item => self, :profile => self) if image_file_name_changed?
+    add_feed(:item => self, :profile => self.profile) if image_file_name_changed?
   end
 end
