@@ -163,6 +163,7 @@ es:
         change_avatar : Cambiar avatar
         change_password: Cambiar contraseña
         settings: Mi cuenta
+        activity: Actividad
       user_sessions:
         log_in: validarse
         register: nueva cuenta
@@ -192,6 +193,7 @@ es:
         change_password: Cambiar contraseña
         password_confirmation: Confirma contraseña    
         my_account: Mi cuenta
+        register: Registro
       profiles:
         my_account: Mi cuenta
         first_name: Nombre
@@ -209,7 +211,15 @@ es:
         log_in_to_follow: Valídate para seguir
       avatars:
         edit_avatar: Cambiar avatar
-          
+        maximum_size: "Tamaño máximo de 700k.  JPG, PNG."
+  helpers:
+    friends:
+      start: "Seguir"
+      stop: "No seguir"
+    feed_items:
+      are_friends: "{{inviter}} y {{invited}} son ahora amigos"
+      avatar: "{{login}} ha cambiado su avatar"
+      profile: "{{login}} ha actualizado su perfil"
   date:
     formats:
       # Use the strftime parameters for formats.

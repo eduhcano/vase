@@ -12,13 +12,12 @@
 	<tr>
 		<th>
 			<label for="user_profile_image">
-				<%= image_tag @p.avatar.image.url(:thumb) %>
+				<%= image_tag @p.avatar.image.url(:medium) %>
 			</label>
 		</th>
 		<td>
-			<%#= f.label :image, t("views.profiles.image") %><br />
 			<%= f.file_field :image %>
-			<p><small>Maximum size of 700k.  JPG, PNG.</small></p>
+			<p><small><%= t("views.avatars.maximum_size") %></small></p>
 		</td>
 	</tr>
 	<tr>
@@ -26,7 +25,7 @@
 		<td>
 			<%= f.submit t("views.common.save") %>
 			<%= f.submit t("views.common.delete_current"), :method => :delete %>
-			<%#= submit_tag t("views.common.delete_current"), :or => (link_to t("views.common.back"), root_path) %>
+			<span class='button_or'><%= "#{t("views.common.or")}" %> <%= link_to t("views.common.back"), root_path %></span>
 		</td>
 	</tr>
 </table>

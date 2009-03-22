@@ -39,6 +39,7 @@ en:
       change_avatar: Change avatar
       change_password: Change password
       settings: My account
+      activity: Activity
     user_sessions:
       log_in: login
       register: new account
@@ -68,6 +69,7 @@ en:
       change_password: Change password
       password_confirmation: Confirm password
       my_account: My Account
+      register: Register
     profiles:
       my_account: My account
       first_name: First name
@@ -85,3 +87,12 @@ en:
       log_in_to_follow: Login to Follow
     avatars:
       edit_avatar: Change avatar
+      maximum_size: "Maximum size of 700k.  JPG, PNG."
+  helpers:
+    friends:
+      start: "Follow"
+      stop: "Remove"
+    feed_items:
+      are_friends: "{{inviter}} and {{invited}} are now friends"
+      avatar: "{{login}} has changed his avatar"
+      profile: "{{login}} has updated his profile"
