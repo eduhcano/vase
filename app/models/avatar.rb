@@ -1,4 +1,4 @@
-class Avatar < ActiveRecord::Base
+class Avatar < ActiveRecord::Base  
   # include
   include FeedLogger
 

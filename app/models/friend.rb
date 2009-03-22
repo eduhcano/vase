@@ -3,18 +3,19 @@ class Friend < ActiveRecord::Base
   include FeedLogger
   
   # relations
-  belongs_to :inviter, :class_name => "Profile", :foreign_key => "inviter_id"
-  belongs_to :invited, :class_name => "Profile", :foreign_key => "invited_id"
-
+  belongs_to  :inviter, :class_name => "Profile", :foreign_key => "inviter_id"
+  belongs_to  :invited, :class_name => "Profile", :foreign_key => "invited_id"
+  has_one     :feed_item, :class_name => "FeedItem", :foreign_key => "item_id", :conditions => {:item_type => 'Friend'}, :dependent => :destroy
+  
   # validates
   validates_presence_of :inviter, :invited
   
-  # callbacks
-  after_create :create_feed
-   
   def validate
     errors.add('inviter', 'inviter and invited can not be the same user') if invited == inviter
   end
+  
+  # callbacks
+  after_create :create_feed
   
   class << self
     def conn(inviter, invited)
@@ -39,6 +40,6 @@ class Friend < ActiveRecord::Base
   protected
 
   def create_feed
-    add_feed(:item => self, :profile => self.inviter)# if image_file_name_changed?
+    add_feed(:item => self, :profile => self.inviter)
   end
 end
