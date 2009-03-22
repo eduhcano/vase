@@ -15,10 +15,6 @@ class Profile < ActiveRecord::Base
   # callbacks
   after_update :create_feed
   
-  def login
-    user.login
-  end
-  
   def after_create
     build_avatar
   end

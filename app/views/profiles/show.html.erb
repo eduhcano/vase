@@ -1,6 +1,6 @@
 <div id="profile">
 	<div id="left">
-		<h1><%=h @profile.user.login %></h1>
+		<h1><%=h @profile.user %></h1>
 		<p><%= @profile.brief_location %></p>
 		<%= image_tag(@profile.avatar.image.url(:medium)) %>
 		<p><%= friend_link(@p, @profile) %></p>

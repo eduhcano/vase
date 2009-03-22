@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
   validate :normalize_openid_identifier
   validates_uniqueness_of :openid_identifier, :allow_blank => true
   
+  def to_s
+    self.login
+  end
+  
   def after_create
     build_profile
   end
