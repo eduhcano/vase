@@ -1,10 +1,34 @@
 <% form_for(@avatar, :url => profile_avatar_path(@p), :html => {:multipart => true, :id => 'avatar'}) do |f| %>
-	<%= f.error_messages %>
-	<p>
-		<%= f.label :image, t("views.profiles.image") %><br />
-		<%= f.file_field :image %>
-	</p>
-	<p>
-		<%= submit_tag t("views.common.save_changes"), :or => (link_to t("views.common.back"), root_path) %>
-	</p>
+<%= f.error_messages %>
+<p>
+	
+</p>
+<p>
+	
+</p>
+
+
+<table cellspacing="0">
+	<tr>
+		<th>
+			<label for="user_profile_image">
+				<%= image_tag @p.avatar.image.url(:thumb) %>
+			</label>
+		</th>
+		<td>
+			<%#= f.label :image, t("views.profiles.image") %><br />
+			<%= f.file_field :image %>
+			<p><small>Maximum size of 700k.  JPG, PNG.</small></p>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td>
+			<%= f.submit t("views.common.save") %>
+			<%= f.submit t("views.common.delete_current"), :method => :delete %>
+			<%#= submit_tag t("views.common.delete_current"), :or => (link_to t("views.common.back"), root_path) %>
+		</td>
+	</tr>
+</table>
+
 <% end %>

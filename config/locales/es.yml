@@ -131,11 +131,16 @@ es:
       common:
         are_you_sure: ¿Estás completamente seguro?
         save_changes: Guardar cambios
+        save: Guardar
+        delete_current: Eliminar actual
         or: ó
         select_one: Selecciona uno
         cancel: Cancelar
         back: Volver
         home: inicio
+        change_avatar : Cambiar avatar
+        change_password: Cambiar contraseña
+        settings: Mi cuenta
       user_sessions:
         log_in: validarse
         register: nueva cuenta
@@ -164,9 +169,9 @@ es:
         password: Contraseña
         change_password: Cambiar contraseña
         password_confirmation: Confirma contraseña    
-        edit_my_account: Editar mi cuenta
+        my_account: Mi cuenta
       profiles:
-        your_account_settings: Detalles de tu cuenta
+        my_account: Mi cuenta
         first_name: Nombre
         last_name: Apellidos
         address: Dirección
@@ -176,14 +181,12 @@ es:
         country: Pais
         time_zone: Zona Horaria
         language: Idioma
-        change_my_avatar : Cambiar mi avatar
-        change_my_password: Cambiar mi contraseña
         website: Página Web
         company: Compañía
       friends:
         log_in_to_follow: Valídate para seguir
       avatars:
-        edit_avatar: Editar avatar
+        edit_avatar: Cambiar avatar
           
   date:
     formats:

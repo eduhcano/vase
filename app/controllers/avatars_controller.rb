@@ -10,7 +10,7 @@ class AvatarsController < ApplicationController
     respond_to do |format|
       if @avatar.update_attributes(params[:avatar])
         flash[:notice] = 'Your avatar was successfully updated'
-        format.html { redirect_to edit_profile_avatar_url(@p) }
+        format.html { redirect_to avatar_url }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -20,6 +20,7 @@ class AvatarsController < ApplicationController
   end
   
   def destroy
+    flash[:error] = "Successfully deleted..."
   end
 
   private

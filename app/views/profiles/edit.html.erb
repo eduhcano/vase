@@ -1,5 +1,6 @@
-<h1><%= t("views.profiles.your_account_settings") %></h1>
+<h1><%= t("views.profiles.my_account") %></h1>
+<%= render :partial => "shared/account" %>
 
-<%= render :partial => "form" %>
-
-<%= link_to t("views.profiles.change_my_avatar"), edit_profile_avatar_path(@p) %> <%= link_to t("views.profiles.change_my_password"), edit_account_path %>
+<div class="settings">
+	<%= render :partial => "form" %>
+</div>

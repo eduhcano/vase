@@ -6,9 +6,18 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :password_resets
   
   map.signup    'signup', :controller => 'users', :action => 'new'
-  map.logout    'logout', :controller => 'user_sessions', :action => 'destroy'
-  map.login     'login', :controller => 'user_sessions', :action => 'new'
-  map.settings  'settings', :controller => 'profiles', :action => 'edit'
+  
+  map.with_options :controller => 'user_sessions' do |page|  
+    page.logout 'logout', :action => 'destroy'
+    page.login  'login', :action => 'new'
+  end
+  
+  map.with_options :path_prefix => 'account' do |page|    
+    page.settings  'settings', :controller => 'profiles', :action => 'edit'
+    page.password  'password', :controller => 'users', :action => 'edit'
+    page.avatar    'avatar', :controller => 'avatars', :action => 'edit'
+  end
+  
   map.user_profile ':login', :controller => 'profiles', :action => 'show'
   
   # default route

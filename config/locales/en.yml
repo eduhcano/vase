@@ -6,11 +6,16 @@ en:
     common:
       are_you_sure: Are you sure?
       save_changes: Save changes
+      save: Save
+      delete_current: Delete current
       or: or  
       select_one: Select one
       cancel: Cancel
       back: Back
       home: home
+      change_avatar: Change avatar
+      change_password: Change password
+      settings: My account
     user_sessions:
       log_in: login
       register: new account
@@ -39,9 +44,9 @@ en:
       password: Password
       change_password: Change password
       password_confirmation: Confirm password
-      edit_my_account: Edit My Account
+      my_account: My Account
     profiles:
-      your_account_settings: Your account settings
+      my_account: My account
       first_name: First name
       last_name: Last name
       address: Address
@@ -51,11 +56,9 @@ en:
       country: Country
       time_zone: Time Zone
       language: Language
-      change_my_avatar: Change my avatar
-      change_my_password: Change my password
       website: Website
       company: Company
     friends:
       log_in_to_follow: Login to Follow
     avatars:
-      edit_avatar: Edit avatar
+      edit_avatar: Change avatar

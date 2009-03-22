@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated"
-      redirect_to edit_account_path
+      redirect_to password_path
     else
       render :action => :edit
     end
