@@ -7,13 +7,13 @@
 		<p><%= link_to t("views.common.back"), root_path %></p>
 	</div>
 	<div id="right">
-		<div id="following_list">
-			<h2>following</h2>
+		<% content_tag :div, :id => "following_list" do -%>
+			<h2><%= t("views.common.followings") %></h2>
 			<%= render :partial => "friend", :collection => @followings %>
-		</div>
-		<div id="followers_list">
-			<h2>followers</h2>
+		<% end if @followings.any? %>
+		<% content_tag :div, :id => "followers_list" do -%>
+			<h2><%= t("views.common.followers") %></h2>
 			<%= render :partial => "friend", :collection => @followers %>
-		</div>
+		<% end if @followers.any? %>
 	</div>
 </div>

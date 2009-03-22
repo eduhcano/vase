@@ -40,6 +40,8 @@ en:
       change_password: Change password
       settings: My account
       activity: Activity
+      followings: Followings
+      followers: Followers
     user_sessions:
       log_in: login
       register: new account

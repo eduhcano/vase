@@ -164,6 +164,8 @@ es:
         change_password: Cambiar contraseña
         settings: Mi cuenta
         activity: Actividad
+        followings: Siguiendo
+        followers: Le siguen
       user_sessions:
         log_in: validarse
         register: nueva cuenta
