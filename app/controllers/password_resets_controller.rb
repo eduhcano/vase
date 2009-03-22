@@ -12,10 +12,10 @@ class PasswordResetsController < ApplicationController
     
     if @user
       @user.deliver_password_reset_instructions!
-      flash[:notice] = "Instructions to reset your password have been emailed to you. Please check your email."
+      flash[:notice] = t("controllers.password.reset")
       redirect_to root_url
     else
-      flash[:error] = "No user was found with that email address"
+      flash[:error] = t("controllers.password.no_user")
       render :action => :new
     end
   end
@@ -29,7 +29,7 @@ class PasswordResetsController < ApplicationController
     @user.password_confirmation = params[:user][:password_confirmation]
     
     if @user.save
-      flash[:notice] = "Password successfully updated"
+      flash[:notice] = t("controllers.password.successfully_updated")
       redirect_to edit_profile_path(@user.profile)
     else
       render :action => :edit
@@ -41,10 +41,7 @@ class PasswordResetsController < ApplicationController
   def load_user_using_perishable_token
     @user = User.find_using_perishable_token(params[:id])
     unless @user
-      flash[:error] = "We're sorry, but we could not locate your account. " +
-      "If you are having issues try copying and pasting the URL " +
-      "from your email into your browser or restarting the " +
-      "reset password process."
+      flash[:error] = t("controllers.password.no_perishable_token")  
       redirect_to root_url
     end
   end

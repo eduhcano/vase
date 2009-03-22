@@ -9,7 +9,7 @@ class AvatarsController < ApplicationController
   def update
     respond_to do |format|
       if @avatar.update_attributes(params[:avatar])
-        flash[:notice] = 'Your avatar was successfully updated'
+        flash[:notice] = t("controllers.avatars.successfully_updated")
         format.html { redirect_to avatar_url }
         format.xml  { head :ok }
       else
@@ -20,7 +20,7 @@ class AvatarsController < ApplicationController
   end
   
   def destroy
-    flash[:error] = "Successfully deleted..."
+    flash[:error] = t("controllers.avatars.successfully_deleted")
   end
 
   private
@@ -28,7 +28,7 @@ class AvatarsController < ApplicationController
   def setup
     @avatar = @p.avatar
     if @avatar.nil? or @p != @avatar.profile
-      flash[:error] = "Please, be careful..."
+      flash[:error] = t("controllers.avatars.wayttd")
       redirect_to root_url
     end
   end

@@ -1,4 +1,4 @@
-<h1><%= t("views.user_sessions.log_in") %></h1>
+<h1><%= t("views.user_sessions.log_in").capitalize %></h1>
 
 <% form_for @user_session, :url => user_session_path do |f| %>
   <%= f.error_messages %>

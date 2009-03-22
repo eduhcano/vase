@@ -8,7 +8,7 @@ class FriendsController < ApplicationController
     
     respond_to do |format|
       if @conn
-        flash[:notice] = "#{@invited.user.login} is now your friend"
+        flash[:notice] = t("controllers.friends.is_your_friend", :friend => @invited.user.login)
         format.html { redirect_to user_profile_path(@invited.user.login) }
         format.xml  { render :xml => @conn, :status => :created }
       else
@@ -23,7 +23,7 @@ class FriendsController < ApplicationController
 
     respond_to do |format|
       if @conn = Friend.break(@p, @invited)
-        flash[:notice] = "#{@invited.user.login} has been removed"
+        flash[:notice] = t("controllers.friends.is_not_your_friend", :friend => @invited.user.login)
         format.html { redirect_to user_profile_path(@invited.user.login) }
         format.xml  { head :ok }
       end

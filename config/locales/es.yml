@@ -126,7 +126,29 @@ es:
       user:
         password: Contraseña
         login: Nombre de usuario
-        
+  controllers:
+    application:
+      you_must_be_logged_in: Tienes que estar validado para acceder a esta página
+      you_must_be_logged_out: No tienes que estar validado para acceder a esta página
+    user_sessions:
+      logout_successful: Sesión finalizada
+    avatars:
+      successfully_updated: Tu avatar se ha actualizado con éxito
+      successfully_deleted: Tu avatar se ha eliminado con éxito
+      wayttd: "Eiii, ¿Qué estás intentando hacer?"
+    friends:
+      is_your_friend: "Estás siguiendo la actividad de {{friend}}"
+      is_not_your_friend: "Has dejado de seguir la actividad de {{friend}}"
+    password:
+      reset: "Hemos enviado un mail con las instrucciones para recuperar tu contraseña. Por favor comprueba tu correo."
+      no_user: No existe ningún usuario con esa dirección de email 
+      successfully_updated: Tu contraseña se ha cambiado con éxito
+      no_perishable_token: "Lo sentimos, pero no hemos podido encontrar tu cuenta. Si tienes problemas intenta copiar y pegar la URL de tu correo electrónico en el navegador o empieza de nuevo con el proceso de restablecimiento de contraseña."
+    profiles:
+      successfully_updated: Tu perfil se ha actualizado con éxito
+    users:
+      registered: Cuenta creada con éxito
+      updated: Tu cuenta se ha actualizado con éxito
   views:
       common:
         are_you_sure: ¿Estás completamente seguro?

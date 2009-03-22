@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
-      flash[:notice] = "Account registered"
+      flash[:notice] = t("controllers.users.registered")
       redirect_back_or_default edit_profile_path(@user.profile)
     else
       render :action => :new
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @user = @current_user
     
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Account updated"
+      flash[:notice] = t("controllers.users.updated")
       redirect_to password_path
     else
       render :action => :edit

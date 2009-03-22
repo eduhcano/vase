@@ -21,7 +21,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update_attributes(params[:profile])
-        flash[:notice] = 'Your profile was successfully updated'
+        flash[:notice] = t("controllers.profiles.successfully_updated") 
         format.html { redirect_to settings_path }
         format.xml  { head :ok }
       else

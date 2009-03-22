@@ -2,6 +2,29 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  controllers:
+    application:
+      you_must_be_logged_in: You must be logged in to access this page
+      you_must_be_logged_out: You must be logged out to access this page
+    user_sessions:
+      logout_successful: Logout successful
+    avatars:
+      successfully_updated: Your avatar was successfully updated
+      successfully_deleted: Successfully deleted...
+      wayttd: "Eiii, what are you trying to do?"
+    friends:
+      is_your_friend: "You are following the {{friend}}'s activity"
+      is_not_your_friend: "You stop following the {{friend}}'s activity"
+    password:
+      reset: Instructions to reset your password have been emailed to you. Please check your email.
+      no_user: No user was found with that email address
+      successfully_updated: Password successfully updated
+      no_perishable_token: "We're sorry, but we could not locate your account. If you are having issues try copying and pasting the URL from your email into your browser or restarting the reset password process."
+    profiles:
+      successfully_updated: Your profile was successfully updated
+    users: 
+      registered: You account was successfully created
+      updated: Your account was successfully updated 
   views:
     common:
       are_you_sure: Are you sure?
