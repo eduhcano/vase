@@ -3,13 +3,13 @@ class FriendsController < ApplicationController
   before_filter :require_user
   
   def create
-    @invited = Profile.find(params[:profile_id])
+    @invited = User.find_by_login(params[:login]).profile
     @conn = Friend.do_friends(@p, @invited)
     
     respond_to do |format|
       if @conn
         flash[:notice] = "#{@invited.user.login} is now your friend"
-        format.html { redirect_to(@invited) }
+        format.html { redirect_to user_profile_path(@invited.user.login) }
         format.xml  { render :xml => @conn, :status => :created }
       else
         format.html { redirect_to(@invited) }
@@ -19,12 +19,14 @@ class FriendsController < ApplicationController
   end
 
   def destroy
-    @invited = Profile.find(params[:id])
-    @conn = Friend.break(@p, @invited)
+    @invited = User.find_by_login(params[:login]).profile
 
     respond_to do |format|
-      format.html { redirect_to(@invited) }
-      format.xml  { head :ok }
+      if @conn = Friend.break(@p, @invited)
+        flash[:notice] = "#{@invited.user.login} has been removed"
+        format.html { redirect_to user_profile_path(@invited.user.login) }
+        format.xml  { head :ok }
+      end
     end
   end
 end

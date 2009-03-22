@@ -18,6 +18,11 @@ ActionController::Routing::Routes.draw do |map|
     page.avatar    'avatar', :controller => 'avatars', :action => 'edit'
   end
   
+  map.with_options :path_prefix => 'friends' do |page|
+    page.confirm 'confirm/:login', :controller => 'friends', :action => 'create'
+    page.remove   'remove/:login', :controller => 'friends', :action => 'destroy'
+  end
+  
   map.user_profile ':login', :controller => 'profiles', :action => 'show'
   
   # default route
