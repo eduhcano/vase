@@ -1,0 +1,5 @@
+cp config/database.yml.example config/database.yml
+git submodule init
+git submodule update
+rake gems:install
+rake db:migrate
