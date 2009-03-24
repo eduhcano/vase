@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
   before_filter :set_profile
   
   # rescues
-  #rescue_from ActiveRecord::RecordNotFound, :with => :render_404
-  #rescue_from NoMethodError, :with => :render_404
-  #rescue_from ActionView::TemplateError, :with => :render_404
+  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+  rescue_from NoMethodError, :with => :render_404
+  rescue_from ActionView::TemplateError, :with => :render_404
 
   def set_profile
     @p = current_user.profile if current_user && current_user.profile
