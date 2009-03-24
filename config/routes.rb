@@ -12,10 +12,10 @@ ActionController::Routing::Routes.draw do |map|
     page.login  'login', :action => 'new'
   end
 
-  map.with_options :path_prefix => 'account' do |page|    
-    page.settings  'settings', :controller => 'profiles', :action => 'edit'
-    page.password  'password', :controller => 'users', :action => 'edit'
-    page.avatar    'avatar', :controller => 'avatars', :action => 'edit'
+  map.with_options :path_prefix => 'account', :action => 'edit' do |page|    
+    page.settings  'settings', :controller => 'profiles'
+    page.password  'password', :controller => 'users'
+    page.avatar    'avatar', :controller => 'avatars'
   end
   
   map.with_options :controller => 'friends', :path_prefix => 'friends' do |page|
