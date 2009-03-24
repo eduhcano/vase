@@ -1,9 +1,11 @@
-development:
-  app_domain: "localhost:3000"
-  app_url:    "http://localhost:3000"
-  app_contact: "contact@localhost.com"
+development:      
+  app_name:     "baseapp"
+  app_domain:   "localhost:3000"
+  app_url:      "http://localhost:3000"
+  app_contact:  "contact@localhost.com"
 
-production:
-  app_domain: "mydomain.com"
-  app_url:    "http://www.mydomain.com"
-  app_contact: "contact@mydomain.com"  
+production:  
+  app_name:     "baseapp"
+  app_domain:   "mydomain.com"
+  app_url:      "http://www.mydomain.com"
+  app_contact:  "contact@mydomain.com"  

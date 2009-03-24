@@ -15,7 +15,7 @@ class Friend < ActiveRecord::Base
   end
   
   # callbacks
-  after_create :create_feed
+  after_create :create_feed, :send_mail
   
   class << self
     def conn(inviter, invited)
@@ -40,6 +40,10 @@ class Friend < ActiveRecord::Base
   protected
 
   def create_feed
-    add_feed(:item => self, :profile => self.inviter)
+    add_feed(:item => self, :profile => self.inviter)  
+  end                                                
+  
+  def send_mail
+    Notifier.deliver_is_following_you(inviter, invited)
   end
 end

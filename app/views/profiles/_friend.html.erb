@@ -1,1 +1,1 @@
-<span class="vcard"><%= link_to image_tag(friend.avatar.image.url(:micro)), profile_path(friend) %></span>
+<span class="vcard"><%= link_to image_tag(friend.avatar.image.url(:micro)), user_profile_path(friend.user.login) %></span>

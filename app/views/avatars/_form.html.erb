@@ -1,33 +1,25 @@
 <% form_for(@avatar, :url => profile_avatar_path(@p), :html => {:multipart => true, :id => 'avatar'}) do |f| %>
-<%= f.error_messages %>
-<p>
-	
-</p>
-<p>
-	
-</p>
-
-
-<table cellspacing="0">
-	<tr>
-		<th>
-			<label for="user_profile_image">
-				<%= image_tag @p.avatar.image.url(:medium) %>
-			</label>
-		</th>
-		<td>
-			<%= f.file_field :image %>
-			<p><small><%= t("views.avatars.maximum_size") %></small></p>
-		</td>
-	</tr>
-	<tr>
-		<th></th>
-		<td>
-			<%= f.submit t("views.common.save") %>
-			<%= f.submit t("views.common.delete_current"), :method => :delete %>
-			<span class='button_or'><%= "#{t("views.common.or")}" %> <%= link_to t("views.common.back"), root_path %></span>
-		</td>
-	</tr>
-</table>
-
+	<%= f.error_messages %>
+	<br />
+	<table>
+		<tr>
+			<th>
+				<label for="user_profile_image">
+					<%= image_tag @p.avatar.image.url(:medium) %>
+				</label>
+			</th>
+			<td>
+				<%= f.file_field :image %> 		
+				<%- unless !@p.avatar.image? -%>
+				<p><%= f.check_box(:delete_image) %> <%= f.label(:delete_image, 'Check for delete image') %></p>
+				<% end %>
+			</td>   
+		</tr>
+		<tr>
+			<th></th>
+			<td>
+				<%= submit_tag t("views.common.save"), :or => (link_to t("views.common.back"), root_path) %>
+			</td>
+		</tr>
+	</table>
 <% end %>
