@@ -3,7 +3,7 @@ class Notifier < ActionMailer::Base
 
   def password_reset_instructions(user)        
     setup_email                         
-    #I18n.locale = user.language
+    I18n.locale = user.language
     subject       t("models.notifier.password_reset_instructions")
     recipients    user.email
     body          :edit_password_reset_url => edit_password_reset_url(user.perishable_token), :app => APP_CONFIG["app_name"], :contact => APP_CONFIG["app_contact"]
@@ -11,7 +11,7 @@ class Notifier < ActionMailer::Base
   
   def is_following_you(inviter, invited)                                                                              
     setup_email
-    #I18n.locale = invited.language
+    I18n.locale = invited.language
     subject       I18n.t ("models.notifier.is_following_you", :inviter => inviter, :app => APP_CONFIG["app_name"])
     recipients    invited.user.email
     body          :inviter => inviter.user.login, :invited => invited.user.login, :profile_url => user_profile_url(inviter.user.login), :app => APP_CONFIG["app_name"]
