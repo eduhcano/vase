@@ -48,6 +48,7 @@ en:
       settings: Settings
       logout: logout
       login: Username
+      email: Email
       use_open_id: login using OpenID
       password: Password
       remember_me: Remember me on this PC
@@ -67,6 +68,7 @@ en:
       openid_identifier: Or use OpenID instead of a standard login / password
       email: Email
       login: Username
+      url: URL
       password: Password
       change_password: Change password
       password_confirmation: Confirm password

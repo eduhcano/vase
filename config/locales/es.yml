@@ -172,6 +172,7 @@ es:
         settings: Cuenta
         logout: salir 
         login: Nombre de usuario
+        email: Email
         use_open_id: valídate usando OpenID
         password: Contraseña
         remember_me: Recordarme en este equipo
@@ -191,6 +192,7 @@ es:
         openid_identifier: O usar OpenID en vez de nombre de usuario / contraseña
         email: Email
         login: Nombre de usuario
+        url: URL
         password: Contraseña
         change_password: Cambiar contraseña
         password_confirmation: Confirma contraseña    
