@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
   has_one :profile, :dependent => :destroy
     
   # authlogic  
-  acts_as_authentic
+  acts_as_authentic do |c|
+    c.require_password_confirmation = false
+  end
   
   # validates
   validate :normalize_openid_identifier

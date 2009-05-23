@@ -1,9 +1,9 @@
-<h1><%= t("views.password_resets.forgot_password") %></h1>
-<p><%= t("views.password_resets.forgot_password_paragraph") %></p>
+<h1><%= t(".forgot_password") %></h1>
+<p><%= t(".forgot_password_paragraph") %></p>
  
 <% form_tag password_resets_path do %>
-  <label><%= t("views.password_resets.email") %></label><br />
+  <label><%= t(".email") %></label><br />
   <%= text_field_tag "email" %><br />
   <br />
-	<%= submit_tag t("views.password_resets.reset_password"), :or => (link_to t("views.common.cancel"), root_path) %>
+	<%= submit_tag t(".reset_password"), :or => (link_to t("views.common.cancel"), root_path) %>
 <% end %>

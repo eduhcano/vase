@@ -11,14 +11,14 @@
 			<td>
 				<%= f.file_field :image %> 		
 				<%- unless !@p.avatar.image? -%>
-				<p><%= f.check_box(:delete_image) %> <%= f.label(:delete_image, 'Check for delete image') %></p>
+				<p><%= f.check_box(:delete_image) %> <%= f.label(:delete_image, t(".check_for_delete")) %></p>
 				<% end %>
 			</td>   
 		</tr>
 		<tr>
 			<th></th>
 			<td>
-				<%= submit_tag t("views.common.save"), :or => (link_to t("views.common.back"), root_path) %>
+				<%= submit_tag t("views.common.save_changes"), :or => (link_to t("views.common.back"), root_path) %>
 			</td>
 		</tr>
 	</table>

@@ -1,12 +1,11 @@
 class ProfilesController < ApplicationController
   # filters
-  before_filter :setup
+  before_filter :setup, :except => :show
   before_filter :require_user, :except => :show
   
   def show
     @profile = User.find_by_login(params[:login]).profile
-    @followings = @profile.followings
-    @followers = @profile.followers
+    @followings, @followers = @profile.followings, @profile.followers
     
     respond_to do |format|
       format.html # show.html.erb

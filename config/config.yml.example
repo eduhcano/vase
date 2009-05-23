@@ -8,4 +8,4 @@ production:
   name:     "baseapp"
   domain:   "mydomain.com"
   url:      "http://www.mydomain.com"
-  contact:  "contact@mydomain.com"  
+  contact:  "contact@mydomain.com"

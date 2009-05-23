@@ -8,11 +8,11 @@
 	</div>
 	<div id="right">
 		<% content_tag :div, :id => "following_list" do -%>
-			<h2><%= t("views.common.followings") %></h2>
+			<h2><%= t(".followings") %></h2>
 			<%= render :partial => "shared/friend", :collection => @followings %>
 		<% end if @followings.any? %>
 		<% content_tag :div, :id => "followers_list" do -%>
-			<h2><%= t("views.common.followers") %></h2>
+			<h2><%= t(".followers") %></h2>
 			<%= render :partial => "shared/friend", :collection => @followers %>
 		<% end if @followers.any? %>
 	</div>

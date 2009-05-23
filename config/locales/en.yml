@@ -1,6 +1,3 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
   controllers:
     application:
@@ -24,58 +21,50 @@ en:
       successfully_updated: Your profile was successfully updated
     users: 
       registered: You account was successfully created
-      updated: Your account was successfully updated 
-  views:
-    common:
-      are_you_sure: Are you sure?
-      save_changes: Save changes
-      save: Save
-      delete_current: Delete current
-      or: or  
-      select_one: Select one
-      cancel: Cancel
-      back: Back
+      updated: Your account was successfully updated
+  avatars:
+    edit:
+      edit_avatar: Change avatar
+    form:
+      check_for_delete: Check for delete image
+  errors:
+    opps: "Oops, page down!!"
+    broadcast_message: "This is a test of the emergency broadcast system and it seems that the page you were trying to visit is no longer on my site. Please try to remain calm, these kinds of things happen all the time. If you are looking for something specific, shoot me an email to {{contact}} and I might be able to find the page you are missing. If you can't remember what you were looking for, send me and email to {{contact}} anyways, I promise to be friendly and cordial!"
+    thanks: "Thanks!"
+  feed_items:
+    avatar:
+      avatar: "{{login}} has changed his avatar"
+    friend:
+      are_friends: "{{inviter}} and {{invited}} are now friends"
+  helpers:
+    friends:
+      start: "Follow"
+      stop: "Remove"
+  shared:
+    login:
       home: home
+      register: register
+      log_in: login
+      logout: logout
+    feed:
+      activity: Activity
+    account:
       change_avatar: Change avatar
       change_password: Change password
       settings: My account
-      activity: Activity
+  password_resets:
+    new:
+      forgot_password: Forgot Password
+      forgot_password_paragraph: Fill out the form below and instructions to reset your password will be emailed to you. 
+      email: Email
+      reset_password: Reset my password
+  profiles:
+    edit:
+      my_account: My Account
+    show:
       followings: Followings
       followers: Followers
-    user_sessions:
-      log_in: login
-      register: new account
-      settings: Settings
-      logout: logout
-      login: Username
-      email: Email
-      use_open_id: login using OpenID
-      password: Password
-      remember_me: Remember me on this PC
-      log_me_in: Log in
-      remember_my_password: Remember my password
-      login_using_standard_account: login using a standard username / password
-      openid_identifier: OpenID
-    password_resets:
-      reset_password: Reset my password
-      email: Email
-      forgot_password: Forgot Password
-      forgot_password_paragraph: Fill out the form below and instructions to reset your password will be emailed to you.
-      change_my_password: Change My Password
-      update_password_and_login: Update my password and log me in 
-    users:
-      listing_users: Listing users
-      openid_identifier: Or use OpenID instead of a standard login / password
-      email: Email
-      login: Username
-      url: URL
-      password: Password
-      change_password: Change password
-      password_confirmation: Confirm password
-      my_account: My Account
-      register: Register
-    profiles:
-      my_account: My account
+    form:
       first_name: First name
       last_name: Last name
       address: Address
@@ -87,16 +76,43 @@ en:
       language: Language
       website: Website
       company: Company
+  users:
+    index:
+      listing_users: Listing users
+    new:
+      register: Register
+    edit: 
+      change_password: Change password
+    form:
+      email: Email
+      login: Username
+      password: Password   
+      change_password: Change password
+      openid_identifier: Or use OpenID instead of a standard login / password
+  user_sessions:
+    new:
+      log_in: Login
+      username: Username
+      password: Password
+      remember_me: Remember me on this PC
+      use_open_id: login using OpenID
+      log_me_in: Log in
+      remember_my_password: Remember my password
+      openid_identifier: OpenID
+      login_using_standard_account: login using a standard username / password
+  views:
+    common:
+      save_changes: Save changes
+      cancel: Cancel
+      back: Back
+      are_you_sure: Are you sure?
+      or: or
+      select_one: select one
     friends:
-      log_in_to_follow: Login to Follow
-    avatars:
-      edit_avatar: Change avatar
-      maximum_size: "Maximum size of 700k.  JPG, PNG."
-  helpers:
-    friends:
-      start: "Follow"
-      stop: "Remove"
-    feed_items:
-      are_friends: "{{inviter}} and {{invited}} are now friends"
-      avatar: "{{login}} has changed his avatar"
-      profile: "{{login}} has updated his profile"
+      log_in_to_follow: Login to Follow 
+    users:
+      email: Email
+      login: Username
+      password: Password
+      change_password: Change password
+      openid_identifier: Or use OpenID instead of a standard login / password

@@ -1,47 +1,47 @@
 <% form_for(@p, :cotroller => "profile", :action => "update", :html => {:id => 'profile'}) do |f| %>
 	<%= f.error_messages %>
 	<p>
-		<%= f.label :first_name, t("views.profiles.first_name") %><br />
+		<%= f.label :first_name, t(".first_name") %><br />
 		<%= f.text_field :first_name %>
 	</p>
 	<p>
-		<%= f.label :last_name, t("views.profiles.last_name") %><br />
+		<%= f.label :last_name, t(".last_name") %><br />
 		<%= f.text_field :last_name %>
 	</p>
 	<p>
-		<%= f.label :address, t("views.profiles.address") %><br />
+		<%= f.label :address, t(".address") %><br />
 		<%= f.text_field :address %>
 	</p>
 	<p>
-		<%= f.label :city, t("views.profiles.city") %><br />
+		<%= f.label :city, t(".city") %><br />
 		<%= f.text_field :city %>
 	</p>
 	<p>
-		<%= f.label :zip, t("views.profiles.zip") %><br />
+		<%= f.label :zip, t(".zip") %><br />
 		<%= f.text_field :zip, :size => 10 %>
 	</p>
 	<p>
-		<%= f.label :state, t("views.profiles.state") %><br />
+		<%= f.label :state, t(".state") %><br />
 		<%= f.text_field :state %>
 	</p>
 	<p>
-		<%= f.label :location, t("views.profiles.country") %><br />
+		<%= f.label :location, t(".country") %><br />
 		<%= f.localized_country_select(:country, [], :include_blank => t("views.common.select_one")) %>
 	</p>
 	<p>
-		<%= f.label :website, t("views.profiles.website") %><br />
+		<%= f.label :website, t(".website") %><br />
 		<%= f.text_field :website %>
 	</p>
 	<p>
-		<%= f.label :company, t("views.profiles.company") %><br />
+		<%= f.label :company, t(".company") %><br />
 		<%= f.text_field :company %>
 	</p>
 	<p>
-		<%= f.label :time_zone, t("views.profiles.time_zone") %><br />
+		<%= f.label :time_zone, t(".time_zone") %><br />
 		<%= f.time_zone_select :time_zone %>
 	</p>
 	<p>
-		<%= f.label :language, t("views.profiles.language") %><br />
+		<%= f.label :language, t(".language") %><br />
 		<%= f.select :language, locales %>
 	</p>	
 	<p>

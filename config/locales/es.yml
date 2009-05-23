@@ -1,6 +1,3 @@
-# Spanish translations for Rails
-# by Francisco Fernando García Nieto (ffgarcianieto@gmail.com)
-
 es:
   number:
     # Used in number_with_delimiter()
@@ -12,7 +9,7 @@ es:
       delimiter: "." 
       # Number of decimals, behind the separator (1 with a precision of 2 gives: 1.00)
       precision: 3
-
+ 
     # Used in number_to_currency()
     currency:
       format:
@@ -23,7 +20,7 @@ es:
         separator: "," 
         delimiter: "." 
         precision: 2
-
+ 
     # Used in number_to_percentage()
     percentage:
       format:
@@ -31,7 +28,7 @@ es:
         # separator: 
         delimiter: "" 
         # precision: 
-
+ 
     # Used in number_to_precision()
     precision:
       format:
@@ -39,7 +36,7 @@ es:
         # separator:
         delimiter: "" 
         # precision:
-
+ 
     # Used in number_to_human_size()
     human:
       format:
@@ -47,7 +44,20 @@ es:
         # separator: 
         delimiter: "" 
         precision: 1
-
+      # Rails <= v2.2.2
+      # storage_units: [Bytes, KB, MB, GB, TB]
+      # Rails >= v2.3
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+ 
   # Used in distance_of_time_in_words(), distance_of_time_in_words_to_now(), time_ago_in_words()
   datetime:
     distance_in_words:
@@ -82,18 +92,16 @@ es:
       over_x_years:
         one:  "más de 1 año" 
         other: "más de {{count}} años" 
-
+ 
   activerecord:
     errors:
       template:
         header:
-          #one:   "No se pudo guardar este {{model}} porque se encontró 1 error" 
-          #other:  "No se pudo guardar este {{model}} porque se encontraron {{count}} errores" 
-          one:   "Se encontró 1 error" 
-          other:  "Se encontraron {{count}} errores"
+          one:   "no se pudo guardar este {{model}} porque se encontró 1 error" 
+          other:  "no se pudo guardar este {{model}} porque se encontraron {{count}} errores" 
         # The variable :count is also available
         body: "Se encontraron problemas con los siguientes campos:" 
-
+ 
       # The values :model, :attribute and :value are always available for interpolation
       # The value :count is available when applicable. Can be used for pluralization.
       messages:
@@ -116,16 +124,50 @@ es:
         less_than_or_equal_to: "debe ser menor que o igual a {{count}}"
         odd: "debe ser impar"
         even: "debe ser par"
-
+ 
         # Append your own errors here or at the model/attributes scope.
-
+ 
       models:
         # Overrides default messages
-
-    attributes:
-      user:
-        password: Contraseña
-        login: Nombre de usuario
+ 
+      attributes:
+        # Overrides model and default messages.
+ 
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%e/%m/%Y"
+      short: "%e de %b" 
+      long: "%e de %B de %Y" 
+ 
+    day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
+    abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]
+ 
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Setiembre, Octubre, Noviembre, Diciembre]
+    abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Set, Oct, Nov, Dic]
+    # Used in date_select and datime_select.
+    order: [ :day, :month, :year ]
+ 
+  time:
+    formats:
+      default: "%A, %e de %B de %Y %H:%M:%S %z"
+      short: "%e de %b %H:%M" 
+      long: "%e de %B de %Y %H:%M" 
+    am: "am" 
+    pm: "pm" 
+ 
+  # Used in array.to_sentence.
+  support:
+    array:
+      # Rails <= v.2.2.2
+      # sentence_connector: "y"
+      # Rails >= v.2.3
+      words_connector: ", "
+      two_words_connector: " y "
+      
   controllers:
     application:
       you_must_be_logged_in: Tienes que estar validado para acceder a esta página
@@ -146,126 +188,100 @@ es:
       no_perishable_token: "Lo sentimos, pero no hemos podido encontrar tu cuenta. Si tienes problemas intenta copiar y pegar la URL de tu correo electrónico en el navegador o empieza de nuevo con el proceso de restablecimiento de contraseña."
     profiles:
       successfully_updated: Tu perfil se ha actualizado con éxito
-    users:
+    users: 
       registered: Cuenta creada con éxito
       updated: Tu cuenta se ha actualizado con éxito
-  views:
-      common:
-        are_you_sure: ¿Estás completamente seguro?
-        save_changes: Guardar cambios
-        save: Guardar
-        delete_current: Eliminar actual
-        or: ó
-        select_one: Selecciona uno
-        cancel: Cancelar
-        back: Volver
-        home: inicio
-        change_avatar : Cambiar avatar
-        change_password: Cambiar contraseña
-        settings: Mi cuenta
-        activity: Actividad
-        followings: Siguiendo
-        followers: Le siguen
-      user_sessions:
-        log_in: validarse
-        register: nueva cuenta
-        settings: Cuenta
-        logout: salir 
-        login: Nombre de usuario
-        email: Email
-        use_open_id: valídate usando OpenID
-        password: Contraseña
-        remember_me: Recordarme en este equipo
-        log_me_in: Validarme
-        remember_my_password: recordar mi contraseña
-        login_using_standard_account: valídate usando nombre de usuario/contraseña
-        openid_identifier: Identificador OpenID
-      password_resets:
-        reset_password: Reset my password
-        email: Email
-        forgot_password: Forgot Password
-        forgot_password_paragraph: Fill out the form below and instructions to reset your password will be emailed to you
-        change_my_password: Cambiar mi contraseña
-        update_password_and_login: Cambiar contraseña y validar
-      users:
-        listing_users: Lista de usuarios
-        openid_identifier: O usar OpenID en vez de nombre de usuario / contraseña
-        email: Email
-        login: Nombre de usuario
-        url: URL
-        password: Contraseña
-        change_password: Cambiar contraseña
-        password_confirmation: Confirma contraseña    
-        my_account: Mi cuenta
-        register: Registro
-      profiles:
-        my_account: Mi cuenta
-        first_name: Nombre
-        last_name: Apellidos
-        address: Dirección
-        city: Ciudad
-        zip: Código Postal
-        state: Provincia
-        country: Pais
-        time_zone: Zona Horaria
-        language: Idioma
-        website: Página Web
-        company: Compañía
-      friends:
-        log_in_to_follow: Valídate para seguir
-      avatars:
-        edit_avatar: Cambiar avatar
-        maximum_size: "Tamaño máximo de 700k.  JPG, PNG."
+  avatars:
+    edit:
+      edit_avatar: Cambiar avatar
+    form:
+      check_for_delete: Selecciona para eliminar
+  errors:
+    opps: "Uppps, ¡la página ha volado!"
+    broadcast_message: "Esto es una página de prueba para confirmar que todo va bien, aunque parace ser que la página que buscas ya no está disponible. Por favor manten la calma, estas cosas suelen pasar, los informáticos somos así. Si estás buscando algo en concreto, puedes enviarme un email a {{contact}} e intentaré ayudarte en todo lo que pueda. Si no puedes recordar lo que estabas buscando, envíame un mail de todas formas a {{contact}}, prometo ser amable y cordial!"
+    thanks: "Muchas gracias!"
+  feed_items:
+    avatar:
+      avatar: "{{login}} ha cambiado su avatar"
+    friend:
+      are_friends: "{{inviter}} y {{invited}} son ahora amigos"
   helpers:
     friends:
       start: "Seguir"
       stop: "No seguir"
-    feed_items:
-      are_friends: "{{inviter}} y {{invited}} son ahora amigos"
-      avatar: "{{login}} ha cambiado su avatar"
-      profile: "{{login}} ha actualizado su perfil"
-  date:
-    formats:
-      # Use the strftime parameters for formats.
-      # When no format has been given, it uses default.
-      # You can provide other formats here if you like!
-      default: "%Y-%m-%d" 
-      short: "%d de %b" 
-      long: "%d de %B de %Y" 
-
-    day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
-    abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]
-
-    # Don't forget the nil at the beginning; there's no such thing as a 0th month
-    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Setiembre, Octubre, Noviembre, Diciembre]
-    abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Set, Oct, Nov, Dic]
-    # Used in date_select and datime_select.
-    order: [ :year, :month, :day ]
-
-  time:
-    formats:
-      default: "%A, %d de %B de %Y %H:%M:%S %z"
-      short: "%d de %b %H:%M" 
-      long: "%d de %B de %Y %H:%M" 
-    am: "am" 
-    pm: "pm" 
-
-  # Used in array.to_sentence.
-  support:
-    array:
-      sentence_connector: "y"
-      
-  authlogic:
-    error_messages:
-      login_blank: "no puede estar vacío"
-      login_not_found: "no existe"
-      login_invalid: "should use only letters, numbers, spaces, and .-_@ please."
-      consecutive_failed_logins_limit_exceeded: Consecutive failed logins limit exceeded.
-      email_invalid: should look like an email address.
-      password_blank: "no puede estar vacío"
-      password_invalid: "no es válido" 
-      not_active: "Tu cuenta no está activa"
-      not_confirmed: "Tu cuenta no está confirmada"
-      not_approved: "Tu cuenta no está aprovada"
-      blank_record: You can not login with a blank record
-      new_record: You can not login with a new record
+  shared:
+    login:
+      home: inicio
+      register: nueva cuenta
+      log_in: validarse
+      logout: salir
+    feed:
+      activity: Actividad
+    account:
+      change_avatar : Cambiar avatar
+      change_password: Cambiar contraseña
+      settings: Mi cuenta
+  password_resets:
+    new:
+      forgot_password: Olvidé mi contraseña
+      forgot_password_paragraph: Fill out the form below and instructions to reset your password will be emailed to you. 
+      email: Email
+      reset_password: Cambiar mi contraseña
+  profiles:
+    edit:
+      my_account: Mi Cuenta
+    show:
+      followings: Siguiendo
+      followers: Le siguen
+    form:
+      first_name: Nombre
+      last_name: Apellidos
+      address: Dirección
+      city: Ciudad
+      zip: Código Postal
+      state: Provincia
+      country: Pais
+      time_zone: Zona Horaria
+      language: Idioma
+      website: Página Web
+      company: Compañía
+  users:
+    index:
+      listing_users: Lista de usuarios
+    new:
+      register: Registro
+    edit: 
+      change_password: Cambiar contraseña
+    form:
+      email: Email
+      login: Nombre de usuario
+      password: Contraseña
+      change_password: Cambiar contraseña
+      openid_identifier: O usar OpenID en vez de nombre de usuario / contraseña
+  user_sessions:
+    new:
+      log_in: Validarse
+      username: Nombre de usuario
+      password: Contraseña
+      remember_me: Recordarme en este equipo
+      use_open_id: valídate usando OpenID
+      log_me_in: Validarme
+      remember_my_password: Recordar mi contraseña
+      openid_identifier: Identificador OpenID
+      login_using_standard_account: valídate usando nombre de usuario/contraseña
+  views:
+    common:
+      save_changes: Guardar cambios
+      cancel: Cancelar
+      back: Volver
+      are_you_sure: ¿Estás seguro?
+      or: ó
+      select_one: selecciona una
+    friends:
+      log_in_to_follow: Valídate para seguir
+    users:
+      email: Email
+      login: Nombre de usuario
+      password: Contraseña
+      change_password: Cambiar contraseña
+      openid_identifier: O usar OpenID en vez de nombre de usuario / contraseña

@@ -55,6 +55,7 @@ class Profile < ActiveRecord::Base
   protected
   
   def create_feed
+    # uncomment if you wat to have a new feed each time the user updates his profile
     #add_feed(:item => self, :profile => self)
   end
   
