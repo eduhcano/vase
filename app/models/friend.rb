@@ -29,7 +29,6 @@ class Friend < ActiveRecord::Base
     def do_friends(inviter, invited, send_mail = nil)
       unless inviter != invited && Friend.exists?(inviter, invited)
         create(:inviter => inviter, :invited => invited)
-        Notifier.deliver_is_following_you(inviter, invited)
       end
     end
     
@@ -45,6 +44,6 @@ class Friend < ActiveRecord::Base
   end                                                
   
   def send_mail
-    
+    Notifier.deliver_is_following_you(inviter, invited)
   end
 end
