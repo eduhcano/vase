@@ -2,11 +2,9 @@
  
 <% form_for @user, :url => password_reset_path, :method => :put do |f| %>
   <%= f.error_messages %>
-  <%= f.label :password, t(".change_my_password") %><br />
-  <%= f.password_field :password %><br />
-  <br />
-  <%= f.label :password_confirmation, t(".change_my_password") %><br />
-  <%= f.password_field :password_confirmation %><br />
-  <br />
+
+	<p><%= f.label :password, t(".new_password") %><br />
+	<%= f.password_field :password %></p>
+	
   <%= submit_tag t(".update_password_and_login"), :or => (link_to t("views.common.cancel"), root_path) %>
 <% end %>

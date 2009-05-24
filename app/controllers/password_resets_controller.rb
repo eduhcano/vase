@@ -26,7 +26,6 @@ class PasswordResetsController < ApplicationController
 
   def update
     @user.password = params[:user][:password]
-    @user.password_confirmation = params[:user][:password_confirmation]
     
     if @user.save
       flash[:notice] = t("controllers.password.successfully_updated")

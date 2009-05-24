@@ -227,6 +227,10 @@ es:
       forgot_password_paragraph: Fill out the form below and instructions to reset your password will be emailed to you. 
       email: Email
       reset_password: Cambiar mi contraseña
+    edit:
+      change_my_password: Solicitud de cambio de contraseña
+      new_password: Nueva contraseña
+      update_password_and_login: Cambiar contraseña
   profiles:
     edit:
       my_account: Mi Cuenta

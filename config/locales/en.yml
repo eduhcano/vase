@@ -58,6 +58,10 @@ en:
       forgot_password_paragraph: Fill out the form below and instructions to reset your password will be emailed to you. 
       email: Email
       reset_password: Reset my password
+    edit:
+      change_my_password: Password reset request
+      new_password: New password
+      update_password_and_login: Change password
   profiles:
     edit:
       my_account: My Account
