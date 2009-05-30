@@ -97,8 +97,8 @@ es:
     errors:
       template:
         header:
-          one:   "no se pudo guardar este {{model}} porque se encontró 1 error" 
-          other:  "no se pudo guardar este {{model}} porque se encontraron {{count}} errores" 
+          one:   "No se pudo guardar este {{model}} porque se encontró 1 error" 
+          other:  "No se pudo guardar este {{model}} porque se encontraron {{count}} errores" 
         # The variable :count is also available
         body: "Se encontraron problemas con los siguientes campos:" 
  
@@ -289,3 +289,24 @@ es:
       password: Contraseña
       change_password: Cambiar contraseña
       openid_identifier: O usar OpenID en vez de nombre de usuario / contraseña
+  authlogic:
+    error_messages:
+      login_blank: no puede estar en blanco
+      login_not_found: no es válido
+      login_invalid: "debe contener sólo caracteres, números, espacios, y .-_@"
+      consecutive_failed_logins_limit_exceeded: "Vaya, demasiados intentos consecutivos, tu cuenta se ha deshabilitado."
+      email_invalid: no tiene el formato correcto
+      password_blank: no puede estar vacía
+      password_invalid: no es válida
+      not_active: Tu cuenta no está activa
+      not_confirmed: "Tu cuenta no está confirmada, revísa tu correo"
+      not_approved: Tu cuenta no ha sido aprovada
+      no_authentication_details: No nos has proporcionado los datos necesarios para poder realizar la validación
+    models:
+      user_session: Sesión
+    attributes:
+      user_session:
+        login: Nombre de usuario
+        email: Email
+        password: Contraseña
+        remember_me: Recuérdame
