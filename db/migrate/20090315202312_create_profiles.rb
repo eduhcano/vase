@@ -5,7 +5,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string    :first_name
       t.string    :last_name
       t.string    :address, :city, :zip, :state, :country
-      t.string    :website, :company
+      t.string    :website, :company, :about
       t.string    :time_zone, :default => "UTC"
       t.string    :language, :size => 2, :default => 'es'
       
