@@ -13,15 +13,22 @@ class ProfilesController < ApplicationController
     end
   end
   
-  def edit
+  def personal
     render
   end
   
+  def preferences
+    render
+  end
+  
+  def registrations
+    render
+  end  
   def update
     respond_to do |format|
       if @profile.update_attributes(params[:profile])
         flash[:notice] = t("controllers.profiles.successfully_updated") 
-        format.html { redirect_to settings_path }
+        format.html { redirect_to personal_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

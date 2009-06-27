@@ -1,2 +1,6 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+var init_settings_form = function(){
+	$("a.change_image").click(function() {
+		$(".image_field").toggle();
+		return false;
+	});	
+}

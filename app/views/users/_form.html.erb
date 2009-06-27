@@ -1,17 +1,17 @@
 <% form_for @user, :url => account_path do |f| %>
-<%= f.error_messages %>
+	<%= f.error_messages %>
 
-<p><%= f.label :email, t(".email") %><br />
-<%= f.text_field :email %></p>
+	<p><%= f.label :email, t(".email") %><br />
+	<%= f.text_field :email, :class => 'small' %></p>
 
-<p><%= f.label :login, t(".login") %><br />
-<%= f.text_field :login, :disabled => @user.new_record? ? false : true %></p>
+	<p><%= f.label :login, t(".login") %><br />
+	<%= f.text_field :login, :disabled => @user.new_record? ? false : true, :class => 'small' %></p>
 
-<p><%= f.label :password, f.object.new_record? ? t(".password") : t(".change_password") %><br />
-<%= f.password_field :password %></p>
+	<p><%= f.label :password, f.object.new_record? ? t(".password") : t(".change_password") %><br />
+	<%= f.password_field :password, :class => 'small' %></p>
 
-<p><%= f.label :openid_identifier, t(".openid_identifier") %><br />
-<%= f.text_field :openid_identifier %></p>
+	<p><%= f.label :openid_identifier, t(".openid_identifier") %><br />
+	<%= f.text_field :openid_identifier %></p>
 
-<%= submit_tag t("views.common.save_changes"), :or => (link_to t("views.common.cancel"), root_path) %>
+	<%= submit_tag t("views.common.save_changes"), :class => 'blueButton', :or => (link_to t("views.common.cancel"), root_path) %>
 <% end %>

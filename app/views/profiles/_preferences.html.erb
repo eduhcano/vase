@@ -1,0 +1,14 @@
+<% form_for(@p, :cotroller => "profile", :action => "update", :html => {:id => 'profile'}) do |f| %>
+	<%= f.error_messages %>
+	<p>
+		<%= f.label :time_zone, t(".time_zone") %><br />
+		<%= f.time_zone_select :time_zone %>
+	</p>
+	<p>
+		<%= f.label :language, t(".language") %><br />
+		<%= f.select :language, locales %>
+	</p>
+	<p>
+		<%= submit_tag t("views.common.save_changes"), :or => (link_to t("views.common.back"), root_path) %>
+	</p>
+<% end %>

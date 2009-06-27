@@ -6,12 +6,12 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>base</title>
   <%= stylesheet_link_tag 'style' %>
-	<%= javascript_include_tag :all %>
+	<%= javascript_include_tag 'jquery-1.3.2.min', 'jquery-ui-1.7.2.custom.min', 'application' %>
 </head>
 <body>
 <div id="container">
 	<div id="header">
-		<div class="username"><%= render :partial => "shared/login" %></div>
+		<div class="username"><%= render :partial => "shared/header" %></div>
 	</div>
 	<div id="content">
 		<div id="flash">

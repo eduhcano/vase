@@ -1,0 +1,43 @@
+<% form_for(@p, :cotroller => "profile", :action => "update", :html => {:id => 'profile', :multipart => true}) do |f| %>
+	<%= f.error_messages %>
+	<p>
+		<%= f.label :image, t(".avatar") %><br />
+		<%- if @p.avatar.image? -%>
+		<p><%= image_tag @p.avatar.image.url(:thumb) %><br />
+		<a href="#" class="change_image"><%= t('.change') %></a></p>
+		<% end %>	
+		<% content_tag :div, :class => "image_field#{' hide' if @p.avatar.image?}" do -%>
+			<%= f.file_field :image %>
+		<% end %>
+	</p>
+	
+	<p>
+		<%= f.label :first_name, t(".first_name") %><br />
+		<%= f.text_field :first_name %>
+	</p>
+	
+	<p>
+		<%= f.label :last_name, t(".last_name") %><br />
+		<%= f.text_field :last_name %>
+	</p>
+	
+	<p>
+		<%= f.label :website, t(".website") %><br />
+		<%= f.text_field :website %>
+	</p>
+	
+	<p>
+		<%#= f.label :description, t(".description") %><br />
+		<%#= f.text_area	:about, :rows => 5 %>
+	</p>
+	
+	<p>
+		<%= submit_tag t("views.common.save_changes"), :or => (link_to t("views.common.back"), root_path) %>
+	</p>
+<% end %>
+
+<script type="text/javascript">
+$(function() {	
+	init_settings_form();
+});
+</script>

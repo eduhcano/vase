@@ -15,8 +15,22 @@ class Profile < ActiveRecord::Base
   # callbacks
   after_update :create_feed
   
+  # accessors
+  attr_accessor :image
+  
   def after_create
-    build_avatar
+    build_avatar if avatar.nil?
+  end
+  
+  def image=(uploaded_data)
+    unless uploaded_data.blank?
+      if avatar.nil?
+        self.avatar = Avatar.new(:image => uploaded_data)
+      else
+        self.avatar.update_attributes(:image => uploaded_data)
+      end
+      self.avatar.save
+    end
   end
   
   def website=(address)

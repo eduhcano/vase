@@ -210,17 +210,17 @@ es:
       start: "Seguir"
       stop: "No seguir"
   shared:
-    login:
+    header:
       home: inicio
       register: nueva cuenta
       log_in: validarse
       logout: salir
     feed:
       activity: Actividad
-    account:
-      change_avatar : Cambiar avatar
-      change_password: Cambiar contraseña
-      settings: Mi cuenta
+    settings:
+      personal : Personal
+      account: Cuenta
+      preferences: Preferencias
   password_resets:
     new:
       forgot_password: Olvidé mi contraseña
@@ -232,12 +232,9 @@ es:
       new_password: Nueva contraseña
       update_password_and_login: Cambiar contraseña
   profiles:
-    edit:
-      my_account: Mi Cuenta
-    show:
-      followings: Siguiendo
-      followers: Le siguen
-    form:
+    personal:
+      avatar: Avatar
+      change: Cambiar
       first_name: Nombre
       last_name: Apellidos
       address: Dirección
@@ -245,10 +242,15 @@ es:
       zip: Código Postal
       state: Provincia
       country: Pais
-      time_zone: Zona Horaria
-      language: Idioma
       website: Página Web
       company: Compañía
+      about: Sobre mí
+    preferences:
+      time_zone: Zona Horaria
+      language: Idioma
+    show:
+      followings: Siguiendo
+      followers: Le siguen
   users:
     index:
       listing_users: Lista de usuarios

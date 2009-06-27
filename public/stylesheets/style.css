@@ -42,6 +42,10 @@ label.required {
 	font-weight: bold;
 }
 
+.hide {
+	display: none;
+}
+
 #container {	
 	background-color: #fff;	
 	width: 680px; 
